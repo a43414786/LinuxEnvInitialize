@@ -1,6 +1,7 @@
 syntax on
 set t_Co=256
-set t_ut=colorscheme koehler
+set t_ut=
+colorscheme koehler
 set showcmd
 set nu
 set tabstop=4
@@ -47,4 +48,51 @@ inoremap <expr> <S-TAB> pumvisible() ?"\<C-p>": "\<S-TAB>"
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme = 'ouo'
+call plug#end()
+
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdcommenter'
+filetype plugin on
+Plug 'itchyny/lightline.vim'
+set laststatus=2
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+nmap <F5> :NERDTreeToggle<CR>
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+			\ quit | endif
+Plug 'jiangmiao/auto-pairs'
+au FileType ejs let b:AutoPairs = AutoPairsDefine({'<%': '%>', '<!--': '-->'})
+au FileType html let b:AutoPairs = AutoPairsDefine({'<!--': '-->'})
+Plug 'preservim/nerdcommenter'
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCustomDelimiters = { 'ejs': { 'left': '<!--','right': '-->' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+Plug 'mbbill/undotree'
+nnoremap <F6> :UndotreeToggle<CR>
+Plug 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+Plug 'Chiel92/vim-autoformat'
+let g:python3_host_prog="/usr/bin/python3"
+nmap <leader>f :Autoformat<CR>
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'junegunn/vim-easy-align'
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+Plug 'mattn/emmet-vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'isruslan/vim-es6'
+Plug 'maxmellon/vim-jsx-pretty'
+hi link jsxPunct Directory
+hi link jsxCloseString Directory
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'ap/vim-css-color'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'cespare/vim-toml'
 call plug#end()
