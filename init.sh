@@ -9,7 +9,7 @@ sudo apt install git curl vim-gtk3
 sudo apt install build-essential
 gcc --version
 #Install plugin manager “vim-plug”
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vimplug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #Initial vim setting
 cp .vimrc ~/.vimrc
 #Gen ssh key
