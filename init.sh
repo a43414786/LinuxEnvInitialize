@@ -10,3 +10,4 @@ sudo apt install build-essential
 gcc --version
 #Install plugin manager “vim-plug”
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vimplug/master/plug.vim
+cp .vimrc ~/.vimrc
