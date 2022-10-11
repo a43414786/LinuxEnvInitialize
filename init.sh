@@ -10,4 +10,8 @@ sudo apt install build-essential
 gcc --version
 #Install plugin manager “vim-plug”
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vimplug/master/plug.vim
+#Initial vim setting
 cp .vimrc ~/.vimrc
+#Gen ssh key
+ssh-keygen
+echo sshkey : $(cat ~/.ssh/id_rsa.pub)
